@@ -1,0 +1,352 @@
+ 
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+  }
+  
+  html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Barlow', sans-serif;
+    /* font-family: 'Poppins', sans-serif; */
+    /* font-weight: 300;
+    color: #444; */
+    /* line-height: 1.9; */
+    /* background-color: #f3f3f3; */
+  }
+
+   /* NAVIGATION */
+   .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 9rem;
+    width: 100%;
+    padding: 2rem 0 0 0rem;
+    margin-top: 5px;
+    margin-left: 20px;
+    z-index: 100;
+    color: #ffffff;
+  }
+  
+  /* nav and stickly class at the same time */
+  .nav.sticky{
+    position: fixed;
+    /* background-color: rgba(255, 255, 255, 0.95); */
+  }
+  
+  .nav__logo {
+    height: 4.5rem;
+    transition: all 0.3s;
+  }
+  
+  .nav__links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(81.5485px);
+  }
+  
+  .nav__item {
+    margin:1.5rem 4rem;
+    font-weight: 300;
+  }
+  
+  .nav__link:link,
+  .nav__link:visited {
+    font-size: 1.7rem;
+    font-weight: 200;
+    color: inherit;
+    text-decoration: none;
+    display: block;
+    transition: all 0.3s;
+  }
+  
+  /* HEADER */
+  .header {
+    padding: 0 3rem;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: space-between; */
+    background-image: url(IMG/Bitmap.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  
+  .header__title {
+    color: #ffffff;
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    text-align: left;
+    overflow: hidden;
+  }
+  
+  .header h1 {
+    font-size: 9rem;
+    line-height: 1.35;
+    font-weight: 200;
+  }
+  
+  .header h3 {
+    font-size: 2rem;
+    font-weight: 400;
+    color: #D0D6F9;
+  }
+  .header p{
+    color: #D0D6F9;
+    font-weight: 300;
+    font-size: 1.4rem;
+  }
+  .explore-img img{
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    left: 65%;
+    top: 50%; 
+  }
+
+/* DESTINATION */
+.destinations{
+  width: 100%;
+  height: 100vh;
+  background-image: url(IMG/moon\ bgd.jpg);
+  background-size: cover;
+  background-position: center;
+  /* position: relative; */
+}
+.heading h3{
+  padding: 100px 0 0 100px;
+  font-size: 2rem;
+  color: #ffffff;
+  font-weight: 600;
+}
+.heading span {
+  font-weight: 100;
+}
+
+.planets{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 50px 150px;
+  color: #ffffff;
+}
+.planet-image img {
+  width: 300px;
+  height: 300px;
+}
+.planet-text{
+  display: block;
+  
+}
+.planet-links ul {
+  font-size: 18px;
+  font-weight: 200;
+}
+
+.planet-links {
+  flex: 1;
+  /* text-align: right; */
+}
+
+.planet-links ul li {
+  display: inline-block;
+  padding: 15px 10px;
+}
+
+.planet-links ul li a {
+  text-decoration: none;
+  color: #ffffff;
+}
+.planet-text h1 {
+    font-size: 13rem;
+    line-height: 1.35;
+    font-weight: 200;
+    padding-bottom: 8px;
+}
+.planet-text p{
+    color: #D0D6F9;
+    font-weight: 300;
+    font-size: 1.5rem;
+}
+hr{
+  margin: 40px 0 20px 0;
+  font-weight: 200;
+  color: #D0D6F9;
+}
+
+.planet-text-footer--1{
+  text-align: left;
+  display: inline-block;
+  color: #D0D6F9;
+  padding-right: 60px;
+}
+.planet-text-footer--1 h3{
+  font-size: 2rem;
+  font-weight: 300;
+  padding-top: 5px;
+}
+.planet-text-footer--1 h4{
+  font-weight: 200;
+}
+
+/* CREWS */
+.crew{
+  width: 100vw;
+  height: 100vh;
+  background-image: url(IMG/crew\ bgd.png);
+  background-size: cover;
+  background-position: center;
+}
+.crew-details{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: -13px 100px;
+  color: #ffffff;
+}
+/* .crew-details::before {
+  content: '\201C';
+  position: absolute;
+  top: -5.7rem;
+  left: -6.8rem;
+  line-height: 1;
+  font-size: 20rem;
+  font-family: inherit;
+  color: var(--color-primary);
+  z-index: -1;
+} */
+
+.crew-image img{
+  width: 390px;
+  height: 512px;
+}
+
+.crew-text{
+  display: block;
+}
+.crew-text h1 {
+  font-size: 5rem;
+  line-height: 1.35;
+  font-weight: 200;
+  padding-bottom: 8px;
+}
+.crew-text p{
+  color: #D0D6F9;
+  font-weight: 300;
+  font-size: 1.5rem;
+}
+.crew-text h3{
+  font-size: 2.5rem;
+  font-weight: 100;
+  color: #D0D6F9;
+  padding-bottom: 10px;
+}
+
+/* SLIDER */
+.slider {
+  max-width: 120rem;
+  height: 50rem;
+  margin: 0 auto;
+  position: relative;
+
+  /* IN THE END */
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 50rem;
+
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+
+  /* THIS creates the animation! */
+  transition: transform 1s;
+} 
+ .slide > img {
+  /* Only for images that have different size than slide */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+} 
+ .slider__btn {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+
+  border: none;
+  background: rgba(255, 255, 255, 0.7);
+  font-family: inherit;
+  color: #333;
+  border-radius: 50%;
+  height: 5.5rem;
+  width: 5.5rem;
+  font-size: 3.25rem;
+  cursor: pointer;
+}
+
+.slider__btn--left {
+  left: 4%;
+  transform: translate(-50%, -50%);
+}
+
+.slider__btn--right {
+  right: 4%;
+  transform: translate(50%, -50%);
+} 
+
+.dots {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+}
+
+.dots__dot {
+  border: none;
+  background-color: #b9b9b9;
+  opacity: 0.7;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  margin-right: 1.75rem;
+  cursor: pointer;
+  transition: all 0.5s;
+
+  /* Only necessary when overlying images */
+  /* box-shadow: 0 0.6rem 1.5rem rgba(0, 0, 0, 0.7); */
+}
+
+.dots__dot:last-child {
+  margin: 0;
+}
+
+.dots__dot--active {
+  background-color: #fff;
+  /* background-color: #888; */
+  opacity: 1;
+}
+
+
+.tech-image img{
+  width: 390px;
+  height: 512px;
+}
+.tech-btn img{
+  width: 390px;
+  height: 512px;
+}
