@@ -1,8 +1,8 @@
  
-  * {
+  *, *::after,*::before {
     margin: 0;
     padding: 0;
-    box-sizing: inherit;
+    box-sizing: border-box;
   }
   
   html {
@@ -12,6 +12,7 @@
   
   body {
     font-family: 'Barlow', sans-serif;
+    width: 100vw;
     /* font-family: 'Poppins', sans-serif; */
     /* font-weight: 300;
     color: #444; */
@@ -24,11 +25,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 9rem;
-    width: 100%;
-    padding: 2rem 0 0 0rem;
-    margin-top: 5px;
-    margin-left: 20px;
+    height: 8rem;
+    width: 90%;
+    padding: 1rem 0 1rem 2.5rem;
+    margin-top: 2px;
+    margin-left: 10px;
     z-index: 100;
     color: #ffffff;
   }
@@ -66,7 +67,16 @@
     display: block;
     transition: all 0.3s;
   }
-  
+  /* .nav__links li::after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: #ffffff;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+   */
   /* HEADER */
   .header {
     padding: 0 3rem;
@@ -130,7 +140,8 @@
   font-weight: 600;
 }
 .heading span {
-  font-weight: 100;
+  font-weight: 400;
+  color: #4c4c55;
 }
 
 .planets{
@@ -214,17 +225,6 @@ hr{
   margin: -13px 100px;
   color: #ffffff;
 }
-/* .crew-details::before {
-  content: '\201C';
-  position: absolute;
-  top: -5.7rem;
-  left: -6.8rem;
-  line-height: 1;
-  font-size: 20rem;
-  font-family: inherit;
-  color: var(--color-primary);
-  z-index: -1;
-} */
 
 .crew-image img{
   width: 390px;
@@ -298,7 +298,28 @@ hr{
   cursor: pointer;
 }
 
-.slider__btn--left {
+/* Tech slides */
+.slide2 {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 50rem;
+
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+
+  /* THIS creates the animation! */
+  transition: transform 1s;
+} 
+ .slide2 > img {
+  /* Only for images that have different size than slide */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+} 
+
+/* .slider__btn--left {
   left: 4%;
   transform: translate(-50%, -50%);
 }
@@ -306,7 +327,7 @@ hr{
 .slider__btn--right {
   right: 4%;
   transform: translate(50%, -50%);
-} 
+}  */
 
 .dots {
   position: absolute;
@@ -341,12 +362,92 @@ hr{
   opacity: 1;
 }
 
+/* DOTS 2 */
+.dots2 {
+  position: absolute;
+  top: 25%;
+  left: 10%;
+  transform: translateX(-50%);
+  /* display: flex; */
+}
+.dot2 p{
+  color: red;
+  font-size: 3rem;
+}
+
+.dots2__dot {
+  border: 1px solid #4c4c55;
+  background-color: #11131E;
+  /* opacity: 0.7; */
+  height: 6rem;
+  width: 6rem;
+  border-radius: 50%;
+  margin-bottom: 2.5rem;
+  margin-right: 6rem;
+  cursor: pointer;
+  transition: all 0.5s;
+  display: block;
+
+
+  /* Only necessary when overlying images */
+  /* box-shadow: 0 0.6rem 1.5rem rgba(0, 0, 0, 0.7); */
+}
+
+.dots2__dot:last-child {
+  margin: 0;
+}
+
+.dots2__dot--active {
+  background-color: #fff;
+  /* background-color: #888; */
+  opacity: 1;
+}
+
+
+
+/* CREWS */
+.technology{
+  width: 100vw;
+  height: 100vh;
+  background-image: url(IMG/tech\ bgd.png);
+  background-size: cover;
+  background-position: center;
+}
+
+.tech-details{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+  margin-left: 170px;
+  /* margin: 0px 100px; */
+  color: #ffffff;
+}
 
 .tech-image img{
   width: 390px;
-  height: 512px;
+  height: 400px;
 }
-.tech-btn img{
-  width: 390px;
-  height: 512px;
+
+.tech-text{
+  display: block;
+}
+.tech-text h1 {
+  font-size: 5rem;
+  line-height: 1.35;
+  font-weight: 300;
+  margin-bottom: 15px;
+  /* margin: 30px 0; */
+}
+.tech-text p{
+  color: #D0D6F9;
+  font-weight: 300;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+}
+.tech-text h3{
+  font-size: 1.5em;
+  font-weight: 500;
+  color: #4c4c55;
+  padding-bottom: 0px;
 }
