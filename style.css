@@ -13,12 +13,8 @@
   body {
     font-family: 'Barlow', sans-serif;
     width: 100vw;
-    /* font-family: 'Poppins', sans-serif; */
-    /* font-weight: 300;
-    color: #444; */
-    /* line-height: 1.9; */
-    /* background-color: #f3f3f3; */
   }
+  
 
    /* NAVIGATION */
    .nav {
@@ -27,8 +23,8 @@
     align-items: center;
     height: 8rem;
     width: 90%;
-    padding: 1rem 0 1rem 2.5rem;
-    margin-top: 2px;
+    padding: 5rem 0 1rem 2.5rem;
+    /* margin-top: 2px; */
     margin-left: 10px;
     z-index: 100;
     color: #ffffff;
@@ -37,12 +33,14 @@
   /* nav and stickly class at the same time */
   .nav.sticky{
     position: fixed;
+    margin-top: -15px;
     /* background-color: rgba(255, 255, 255, 0.95); */
   }
   
   .nav__logo {
     height: 4.5rem;
     transition: all 0.3s;
+    margin-right: 50px;
   }
   
   .nav__links {
@@ -67,24 +65,29 @@
     display: block;
     transition: all 0.3s;
   }
-  /* .nav__links li::after {
+  .nav__links li::after {
     content: '';
-    width: 100%;
+    width: 0;
     height: 2px;
     background: #ffffff;
     display: block;
-    margin: auto;
+    margin-top: 5px;
     transition: 0.5s;
 }
-   */
+
+.nav__links li:hover::after{
+  width: 100%;
+}
+  
+
   /* HEADER */
   .header {
-    padding: 0 3rem;
+    padding: 100px 10%;
     height: 100vh;
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     align-items: center;
-    /* justify-content: space-between; */
+    justify-content: space-between;
     background-image: url(IMG/Bitmap.jpg);
     background-size: cover;
     background-position: center;
@@ -93,11 +96,6 @@
   
   .header__title {
     color: #ffffff;
-    position: absolute;
-    top: 50%;
-    left: 10%;
-    text-align: left;
-    overflow: hidden;
   }
   
   .header h1 {
@@ -117,12 +115,12 @@
     font-size: 1.4rem;
   }
   .explore-img img{
-    position: absolute;
+    /* position: absolute; */
     width: 250px;
     height: 250px;
-    left: 65%;
-    top: 50%; 
   }
+
+ 
 
 /* DESTINATION */
 .destinations{
@@ -143,17 +141,10 @@
   font-weight: 400;
   color: #4c4c55;
 }
-
-.planets{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 50px 150px;
-  color: #ffffff;
-}
 .planet-image img {
   width: 300px;
   height: 300px;
+  margin-right: 50px;
 }
 .planet-text{
   display: block;
@@ -166,6 +157,9 @@
 
 .planet-links {
   flex: 1;
+  position: absolute;
+  left: 60%;
+  top: 2.2%;
   /* text-align: right; */
 }
 
@@ -179,15 +173,15 @@
   color: #ffffff;
 }
 .planet-text h1 {
-    font-size: 13rem;
+    font-size: 10rem;
     line-height: 1.35;
     font-weight: 200;
-    padding-bottom: 8px;
+    padding-bottom: -10px;
 }
 .planet-text p{
     color: #D0D6F9;
     font-weight: 300;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
 }
 hr{
   margin: 40px 0 20px 0;
@@ -210,9 +204,24 @@ hr{
   font-weight: 200;
 }
 
+/* Destination slides */
+.slide3 {
+  position: absolute;
+  top: 0;
+  width: 80%;
+  height: 50rem;
+  transition: transform 1s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin:-50px 0 0 100px;
+  color: #ffffff;
+} 
+
+
 /* CREWS */
 .crew{
-  width: 100vw;
+  /* width: 100vw; */
   height: 100vh;
   background-image: url(IMG/crew\ bgd.png);
   background-size: cover;
@@ -222,13 +231,13 @@ hr{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: -13px 100px;
+  margin: 0px 100px;
   color: #ffffff;
 }
 
 .crew-image img{
   width: 390px;
-  height: 512px;
+  height: 430px;
 }
 
 .crew-text{
@@ -252,86 +261,9 @@ hr{
   padding-bottom: 10px;
 }
 
-/* SLIDER */
-.slider {
-  max-width: 120rem;
-  height: 50rem;
-  margin: 0 auto;
-  position: relative;
-
-  /* IN THE END */
-  overflow: hidden;
-}
-
-.slide {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 50rem;
-
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
-
-  /* THIS creates the animation! */
-  transition: transform 1s;
-} 
- .slide > img {
-  /* Only for images that have different size than slide */
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-} 
- .slider__btn {
-  position: absolute;
-  top: 50%;
-  z-index: 10;
-
-  border: none;
-  background: rgba(255, 255, 255, 0.7);
-  font-family: inherit;
-  color: #333;
-  border-radius: 50%;
-  height: 5.5rem;
-  width: 5.5rem;
-  font-size: 3.25rem;
-  cursor: pointer;
-}
-
-/* Tech slides */
-.slide2 {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 50rem;
-
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
-
-  /* THIS creates the animation! */
-  transition: transform 1s;
-} 
- .slide2 > img {
-  /* Only for images that have different size than slide */
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-} 
-
-/* .slider__btn--left {
-  left: 4%;
-  transform: translate(-50%, -50%);
-}
-
-.slider__btn--right {
-  right: 4%;
-  transform: translate(50%, -50%);
-}  */
-
 .dots {
   position: absolute;
-  bottom: 5%;
+  bottom: 60%;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -347,9 +279,6 @@ hr{
   margin-right: 1.75rem;
   cursor: pointer;
   transition: all 0.5s;
-
-  /* Only necessary when overlying images */
-  /* box-shadow: 0 0.6rem 1.5rem rgba(0, 0, 0, 0.7); */
 }
 
 .dots__dot:last-child {
@@ -358,54 +287,30 @@ hr{
 
 .dots__dot--active {
   background-color: #fff;
-  /* background-color: #888; */
   opacity: 1;
 }
 
-/* DOTS 2 */
-.dots2 {
+/* SLIDER */
+.slider {
+  max-width: 120rem;
+  height: 100rem;
+  margin: 100px auto;
+  position: relative;
+
+  /* IN THE END */
+  overflow: hidden;
+}
+
+.slide {
   position: absolute;
-  top: 25%;
-  left: 10%;
-  transform: translateX(-50%);
-  /* display: flex; */
-}
-.dot2 p{
-  color: red;
-  font-size: 3rem;
-}
-
-.dots2__dot {
-  border: 1px solid #4c4c55;
-  background-color: #11131E;
-  /* opacity: 0.7; */
-  height: 6rem;
-  width: 6rem;
-  border-radius: 50%;
-  margin-bottom: 2.5rem;
-  margin-right: 6rem;
-  cursor: pointer;
-  transition: all 0.5s;
-  display: block;
+  top: 0;
+  width: 100%;
+  height: 50rem;
+  transition: transform 1s;
+} 
 
 
-  /* Only necessary when overlying images */
-  /* box-shadow: 0 0.6rem 1.5rem rgba(0, 0, 0, 0.7); */
-}
-
-.dots2__dot:last-child {
-  margin: 0;
-}
-
-.dots2__dot--active {
-  background-color: #fff;
-  /* background-color: #888; */
-  opacity: 1;
-}
-
-
-
-/* CREWS */
+/* TECHNOLOGY */
 .technology{
   width: 100vw;
   height: 100vh;
@@ -450,4 +355,238 @@ hr{
   font-weight: 500;
   color: #4c4c55;
   padding-bottom: 0px;
+}
+
+/* Tech slides */
+.slider2 {
+  max-width: 120rem;
+  height: 50rem;
+  margin: 0px auto;
+  position: relative;
+
+  /* IN THE END */
+  overflow: hidden;
+}
+.slide2 {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 50rem;
+  transition: transform 1s;
+} 
+
+/* DOTS 2 -- TECH SLIDES */
+.dots2 {
+  position: absolute;
+  top: 50%;
+  left: 6%;
+  transform: translateY(-50%);
+}
+
+.dots2__dot {
+  border: 1px solid #4c4c55;
+  background-color: #11131E;
+  /* opacity: 0.7; */
+  height: 6rem;
+  width: 6rem;
+  border-radius: 50%;
+  margin-bottom: 2.5rem;
+  margin-right: 0rem;
+  cursor: pointer;
+  transition: all 0.5s;
+  display: block;
+}
+
+.dots2__dot:last-child {
+  margin: 0;
+}
+
+.dots2__dot--active {
+  background-color: #fff;
+  opacity: 1;
+}
+
+
+
+
+/* RESPONSIVENESS */
+ /* TABLET */
+ @media(max-width: 850px){
+  .header {
+    flex-direction: column;
+    text-align: center;
+  }
+  .header__title {
+    margin-top: 90px;
+  }
+  .header h1 {
+    font-size: 10rem;
+    line-height: 1.35;
+    font-weight: 200;
+    margin: 10px 0;
+  }
+  
+  .header h3 {
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: #D0D6F9;
+  }
+  .header p{
+    color: #D0D6F9;
+    font-weight: 400;
+    font-size: 2rem;
+  }
+
+  /* CREW */
+  .crew-details{
+    flex-direction: column;
+    text-align: center;
+  }
+  .crew-text{
+    margin-bottom: 70px;
+  }
+  .crew-text h1 {
+    font-size: 5rem;
+    font-weight: 200;
+    margin: 12px 0;
+  }
+  .crew-text p{
+    color: #D0D6F9;
+    line-height: 1.7;
+    font-weight: 300;
+    font-size: 2rem;
+  }
+  .crew-text h3{
+    font-size: 3rem;
+    font-weight: 200;
+    color: #D0D6F9;
+    padding-bottom: 10px;
+  }
+
+  /* TECHNOLOGY */
+  .tech-details{
+    flex-direction: column;
+    text-align: center;
+  }
+  .tech-text{
+    margin-bottom: 70px;
+  }
+  .tech-text h1 {
+    font-size: 5rem;
+    font-weight: 200;
+    margin: 15px 0;
+  }
+  .tech-text p{
+    color: #D0D6F9;
+    line-height: 1.7;
+    font-weight: 300;
+    font-size: 2rem;
+  }
+  .tech-text h3{
+    font-size: 3rem;
+    font-weight: 200;
+    color: #D0D6F9;
+  }
+  .slider2 {
+    max-width: 120rem;
+    height: 50rem;
+    margin: 0px auto;
+    position: relative;
+  
+    /* IN THE END */
+    overflow: hidden;
+  }
+
+}
+
+@media(max-width: 450px){
+  .header {
+    flex-direction: column;
+    text-align: center;
+  }
+  .header__title {
+    margin-top: 60px;
+  }
+  .header h1 {
+    font-size: 6rem;
+    font-weight: 200;
+    margin: 10px 0;
+  }
+  
+  .header h3 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #D0D6F9;
+  }
+  .header p{
+    color: #D0D6F9;
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 2;
+  }
+
+  /* CREW */
+  .crew-details{
+    flex-direction: column;
+    text-align: center;
+  }
+  .crew-text{
+    margin-bottom: 50px;
+  }
+  .crew-text h1 {
+    font-size: 2.05rem;
+    font-weight: 200;
+    margin: -2px 0;
+  }
+  .crew-text p{
+    color: #D0D6F9;
+    line-height: 1.5;
+    font-weight: 300;
+    font-size: .7rem;
+  }
+  .crew-text h3{
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #D0D6F9;
+    /* padding-bottom: 10px; */
+  }
+  .crew-image img{
+    width: 200px;
+    height: 300px;
+  }
+
+  /* TECHNOLOGY */
+  .tech-details{
+    flex-direction: column;
+    text-align: center;
+  }
+  .tech-text{
+    margin-bottom: 70px;
+  }
+  .tech-text h1 {
+    font-size: 5rem;
+    font-weight: 200;
+    margin: 15px 0;
+  }
+  .tech-text p{
+    color: #D0D6F9;
+    line-height: 1.7;
+    font-weight: 300;
+    font-size: 2rem;
+  }
+  .tech-text h3{
+    font-size: 3rem;
+    font-weight: 200;
+    color: #D0D6F9;
+  }
+  .slider2 {
+    max-width: 120rem;
+    height: 50rem;
+    margin: 0px auto;
+    position: relative;
+  
+    /* IN THE END */
+    overflow: hidden;
+  }
+
 }

@@ -17,25 +17,82 @@ document.querySelector('.nav__links').addEventListener
     }
   });
 
-// const header = document.querySelector('.header');
+// DESTINATIONS
+const sliderDestination = function () {
+  const slider = document.querySelector('.slider');
+  const slides = document.querySelectorAll('.slide3');
+  const linkContainer = document.querySelector('.btn-links');
 
-// const stickyNav = function (entries) {
-//     const [entry] = entries;
+  slider.style.overflow = 'hidden';
 
-//     if (!entry.isIntersecting) nav.classList.add
-//         ('sticky');
+  let curSlide = 0;
+  const maxSlide = slides.length;
 
-//     else nav.classList.remove('sticky');
-// }
+  const goToSlide = function (slide) {
+    slides.forEach(
+      (s, i) => s.style.transform =
+        `translateX(${150 * (i - slide)}%)`);
+  }
+  goToSlide(0);
 
-// const headerObserver = new IntersectionObserver
-//     (stickyNav, {
-//         root: null,
-//         threshold: 0,
-//         rootMargin: '-90px'
-// });
+  const nextSlide = function () {
+    if (curSlide === maxSlide - 1) {
+      curSlide = 0;
+    } else {
+      curSlide++;
+    }
 
-// headerObserver.observe(header);
+    // curSlide++;
+    goToSlide(curSlide);
+    // activateDot(curSlide);
+  }
+
+  const prevSlide = function () {
+    if (curSlide === 0) {
+      curSlide = maxSlide - 1
+    }
+    else {
+      curSlide--;
+    }
+    goToSlide(curSlide);
+    // activateDot(curSlide)
+  }
+
+  const init = function () {
+    goToSlide(0);
+    // createDots(0);
+    // activateDot(0); //makes the dot active at position 0
+  }
+  init();
+
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowLeft') prevSlide();
+    e.key === 'ArrowRight' && nextSlide();
+  })
+
+
+  linkContainer.addEventListener('click', function (e) {
+    e.preventDefault();
+
+    if (e.target.classList.contains('btn-link')) {
+      // console.log('LINKER');
+
+      if (curSlide === maxSlide - 1) {
+        curSlide = 0;
+      } else {
+        curSlide++;
+      }
+
+      goToSlide(curSlide);
+
+    };
+  });
+};
+sliderDestination();
+
+
+
 
 //SLIDER
 const slider = function () {
@@ -44,19 +101,8 @@ const slider = function () {
   const btnRight = document.querySelector('.slider__btn--right');
   const dotContainer = document.querySelector('.dots');
 
-
   let curSlide = 0;
   const maxSlide = slides.length;
-
-
-  //to see visualise other slides
-  // const slider = document.querySelector('.slider');
-  // slider.style.transform = 'scale(0.4) translateX (-800px)';
-  // slider.style.overflow = 'visible';
-
-  // slides.forEach((s, i) => (s.style.transform =
-  //   `translateX(${100 * i}%)`));   //replaced with goToSlide(0)
-  //0%, 100%, 200%,300%
 
   //Functions
   const createDots = function () {
@@ -75,8 +121,8 @@ const slider = function () {
         ('dots__dot--active'));
 
     document.querySelector(`.dots__dot[data-slide="${slide}"]
-  `)
-      .classList.add('dots__dot--active');
+  `).classList.add('dots__dot--active');
+
   };
 
 
@@ -128,6 +174,7 @@ const slider = function () {
 
   dotContainer.addEventListener('click', function (e) {
     if (e.target.classList.contains('dots__dot')) {
+      // console.log('dots1')
       // const slide = e.target.dataset.slide;
       const { slide } = e.target.dataset;
       goToSlide(slide);
@@ -138,11 +185,16 @@ const slider = function () {
 slider();
 
 
+
+
+
+
 //SLIDER
 const slider2 = function () {
   const slides = document.querySelectorAll('.slide2');
+  // console.log(slides);
   const dotContainer = document.querySelector('.dots2');
-
+  // console.log(dotContainer);
 
   let curSlide = 0;
   const maxSlide = slides.length;
@@ -172,7 +224,7 @@ const slider2 = function () {
 
   const goToSlide = function (slide) {
     slides.forEach((s, i) => (s.style.transform =
-      `translateY(${100 * (i - slide)}%)`));
+      `translateY(${200 * (i - slide)}%)`));
   }
 
 
@@ -215,8 +267,9 @@ const slider2 = function () {
 
   dotContainer.addEventListener('click', function (e) {
     if (e.target.classList.contains('dots2__dot')) {
-      // const slide = e.target.dataset.slide;
-      const { slide } = e.target.dataset2;
+      console.log('dots1')
+      // const slide = e.target.dataset.slide-2;
+      const { slide } = e.target.dataset;
       goToSlide(slide);
       activateDot(slide)
     }
